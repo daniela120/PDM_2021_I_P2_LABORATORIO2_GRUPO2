@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "PDM_2021_I_P2_LABORATORIO2_GRUPO2"

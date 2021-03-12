@@ -32,15 +32,13 @@ class RealizarMatricula : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
+        val let = arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
 
 
-
-
-        val spinner = findViewById<Spinner>(R.id.spinner)
+        val spinner =let<Spinner>(R.id.spinner)
         val lista = resources.getStringArray(R.array.asignatus)
 
         val adaptador = ArrayAdapter(this, android.R.layout.simple_spinner_item, lista)

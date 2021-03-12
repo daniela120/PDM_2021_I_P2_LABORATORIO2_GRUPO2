@@ -7,6 +7,20 @@
     android:layout_height="match_parent"
     tools:context=".RealizarMatricula">
 
+    <TextView
+        android:id="@+id/txv_NoClases2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SELECCIONE LAS  CLASES:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.46" />
+
     <EditText
         android:id="@+id/txt_nCuentaA1"
         android:layout_width="299dp"
@@ -18,18 +32,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.354" />
-
-    <EditText
-        android:id="@+id/txt_nClases"
-        android:layout_width="299dp"
-        android:layout_height="49dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.514" />
 
     <TextView
         android:id="@+id/txv_CuentaA"
@@ -49,11 +51,12 @@
         android:id="@+id/txv_NoClases"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NUMERO DE CLASES:"
+        android:text="SELECCIONE LAS  CLASES:"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.46" />
@@ -71,4 +74,36 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.138" />
+
+
+    <TextView
+        android:id="@+id/txvSe1"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="@string/seleccion"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.703" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/white"
+        android:padding="20dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.532" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

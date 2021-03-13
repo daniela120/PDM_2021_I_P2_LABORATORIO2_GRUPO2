@@ -22,7 +22,7 @@
         app:layout_constraintVertical_bias="0.46" />
 
     <EditText
-        android:id="@+id/txt_nCuentaA1"
+        android:id="@+id/txt_nCuentaMat"
         android:layout_width="299dp"
         android:layout_height="49dp"
         android:ems="10"
@@ -34,7 +34,7 @@
         app:layout_constraintVertical_bias="0.354" />
 
     <TextView
-        android:id="@+id/txv_CuentaA"
+        android:id="@+id/txv_CuentaMat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="NO. CUENTA DE ALUMNO:"
@@ -92,7 +92,7 @@
         app:layout_constraintVertical_bias="0.703" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spinner_C"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

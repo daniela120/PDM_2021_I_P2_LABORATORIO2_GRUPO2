@@ -9,10 +9,12 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.core.os.persistableBundleOf
 import androidx.fragment.app.Fragment
 import hn.edu.ujcv.pdm_2021_i_p2_laboratorio2_grupo2.R.*
 import kotlinx.android.synthetic.main.fragment_realizar_matricula.*
+import kotlinx.android.synthetic.main.fragment_registrar_alumno.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -27,10 +29,13 @@ private const val ARG_PARAM2 = "param2"
  */
 @Suppress("UNREACHABLE_CODE")
 class RealizarMatricula : Fragment() {
+    var datos: HashMap<Int, String> = hashMapOf()
+    var num = 0
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    private val spinner: Spinner? = null
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,8 +46,23 @@ class RealizarMatricula : Fragment() {
         }
         getAsignatura()
 
+        val spinner: Spinner = findViewById(R.id.spinner)
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter.createFromResource(
+                this,
+                R.array.arreglo,
+                android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            // Specify the layout to use when the list of choices appears
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            // Apply the adapter to the spinner
+            spinner.adapter = adapter
+        }
+
 
     }
+
+
 
 
     override fun onCreateView(
@@ -55,40 +75,22 @@ class RealizarMatricula : Fragment() {
         return inflater.inflate(layout.fragment_realizar_matricula, container, false)
 
 
-        val spinner = view.findViewById()
-        val lista = resources.getStringArray(array.asignatus)
 
-
-        val adaptador = (ArrayAdapter<String>(requireContext(), R.layout.simple_spinner_dropdown_item, lista))
-
-        spinner.adapter = adaptador
-
-        spinner.onItemSelectedListener = object :
-                AdapterView.OnItemSelectedListener {
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-                txvSe1.text = "No ha seleccionado ninguna opcion"
-
-            }
-
-            override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?,
-                    position: Int,
-                    id: Long
-            ) {
-                txvSe1.text = lista[position].toString()
-            }
-
-        }
     }
-
-
 
 
     interface OnFragmentInteractionListener{
         fun onFragmentInteraction(uri: Uri)
     }
+    fun guardar() {
 
+        val dato = StringBuilder()
+        num += 1
+        dato.append(txt_nCuentaMat.text.toString().trim()).append("|")
+        dato.append(txvSe1.text.toString().trim()).append("|")
+        datos.put(num, dato.toString())
+        Toast.makeText(activity, "Matricula realizada exitoxamente", Toast.LENGTH_SHORT).show()
+    }
 
     fun getAsignatura() {
         val bundle = persistableBundleOf()

@@ -39,11 +39,14 @@ class RegistrarAlumno : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
-            btn_registrar.setOnClickListener {guardar()}
+
+            btn_registrar.setOnClickListener{guardar()}
             }
+
     }
 
     private  fun guardar() {
@@ -54,9 +57,9 @@ class RegistrarAlumno : Fragment() {
             dato.append(txt_NombreA.text.toString().trim()).append("|")
             dato.append(txt_CorreoA.text.toString().trim()).append("|")
             datos.put(num, dato.toString())
-            btn_registrar.isEnabled = true
-
+              Toast.makeText(activity, "Alumno Agregado", Toast.LENGTH_SHORT).show()
              }
+
 
 
 

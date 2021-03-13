@@ -11,7 +11,7 @@
         android:id="@+id/btn_registrar"
         android:layout_width="154dp"
         android:layout_height="61dp"
-        android:layout_marginBottom="68dp"
+        android:layout_marginBottom="36dp"
         android:background="@color/red4"
         android:foreground="@drawable/ic__person_add"
         android:foregroundGravity="fill_horizontal|left|bottom|center_vertical|clip_horizontal|center|clip_vertical|center_horizontal"
@@ -23,7 +23,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.553"
+        app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView

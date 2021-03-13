@@ -11,8 +11,8 @@
         android:id="@+id/txtPrueba"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="125dp"
-        android:layout_marginTop="220dp"
+        android:layout_marginStart="184dp"
+        android:layout_marginTop="252dp"
         android:text="@string/probando"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

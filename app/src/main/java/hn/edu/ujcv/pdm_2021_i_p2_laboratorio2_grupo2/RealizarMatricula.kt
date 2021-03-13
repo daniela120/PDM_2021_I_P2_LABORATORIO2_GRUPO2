@@ -36,7 +36,7 @@ class RealizarMatricula : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
-
+        getAsignatura()
 
         val spinner =let<Spinner>(R.id.spinner)
         val lista = resources.getStringArray(R.array.asignatus)
@@ -62,7 +62,7 @@ class RealizarMatricula : Fragment() {
 
         }
 
-        getAsignatura()
+
     }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

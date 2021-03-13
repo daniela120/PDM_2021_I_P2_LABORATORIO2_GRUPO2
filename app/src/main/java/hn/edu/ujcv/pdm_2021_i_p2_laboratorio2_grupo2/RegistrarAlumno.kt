@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View.OnClickListener
 import android.widget.Button
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
@@ -40,20 +41,21 @@ class RegistrarAlumno : Fragment() {
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
-            btn_registrar.setOnClickListener {guardar() }
-        }
+            btn_registrar.setOnClickListener {guardar()}
+            }
     }
 
     private  fun guardar() {
-        val dato = StringBuilder()
-        num += 1
-        dato.append(txt_nCuentaA.text.toString().trim()).append("|")
-        dato.append(txt_NombreA.text.toString().trim()).append("|")
-        dato.append(txt_CorreoA.text.toString().trim()).append("|")
-        datos.put(num, dato.toString())
-        Toast.makeText(getActivity(), "Alumno adicionado", Toast.LENGTH_SHORT).show()
 
-    }
+        val dato = StringBuilder()
+            num += 1
+            dato.append(txt_nCuentaA.text.toString().trim()).append("|")
+            dato.append(txt_NombreA.text.toString().trim()).append("|")
+            dato.append(txt_CorreoA.text.toString().trim()).append("|")
+            datos.put(num, dato.toString())
+
+             }
+
 
 
 

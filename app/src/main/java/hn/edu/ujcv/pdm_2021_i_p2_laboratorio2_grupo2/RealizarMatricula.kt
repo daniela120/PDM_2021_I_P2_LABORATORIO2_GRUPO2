@@ -1,16 +1,17 @@
 package hn.edu.ujcv.pdm_2021_i_p2_laboratorio2_grupo2
 
+import android.R
 import android.net.Uri
-import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
-import hn.edu.ujcv.pdm_2021_i_p2_laboratorio2_grupo2.R.id.spinner
+import androidx.core.os.persistableBundleOf
+import androidx.fragment.app.Fragment
+import hn.edu.ujcv.pdm_2021_i_p2_laboratorio2_grupo2.R.*
 import kotlinx.android.synthetic.main.fragment_realizar_matricula.*
 
 
@@ -24,11 +25,12 @@ private const val ARG_PARAM2 = "param2"
  * Use the [RealizarMatricula.newInstance] factory method to
  * create an instance of this fragment.
  */
+@Suppress("UNREACHABLE_CODE")
 class RealizarMatricula : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-
+    private val spinner: Spinner? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,39 +41,49 @@ class RealizarMatricula : Fragment() {
         }
         getAsignatura()
 
-        val spinner =let<Spinner>(R.id.spinner)
-        val lista = resources.getStringArray(R.array.asignatus)
 
-        val adaptador = ArrayAdapter(this, android.R.layout.simple_spinner_item, lista)
+    }
+
+
+    override fun onCreateView(
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
+
+
+    ): View? {
+        // Inflate the layout for this fragment
+        return inflater.inflate(layout.fragment_realizar_matricula, container, false)
+
+
+        val spinner = view.findViewById(R.id.spinner)
+        val lista = resources.getStringArray(array.asignatus)
+
+
+        val adaptador = (ArrayAdapter<String>(requireContext(), R.layout.simple_spinner_dropdown_item, lista))
+
         spinner.adapter = adaptador
 
         spinner.onItemSelectedListener = object :
-            AdapterView.OnItemSelectedListener {
+                AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(parent: AdapterView<*>?) {
-
-
+                txvSe1.text = "No ha seleccionado ninguna opcion"
 
             }
+
             override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
             ) {
-                txvSe1.text= lista[position].toString()
+                txvSe1.text = lista[position].toString()
             }
 
         }
+    }
 
 
-    }
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_realizar_matricula, container, false)
-    }
+
 
     interface OnFragmentInteractionListener{
         fun onFragmentInteraction(uri: Uri)
@@ -79,9 +91,9 @@ class RealizarMatricula : Fragment() {
 
 
     fun getAsignatura() {
-        val bundle = intent.extras
+        val bundle = persistableBundleOf()
         val trans = bundle?.get("trans")
-        txvSe1.text = getString(R.string.seleccion, trans)
+        txvSe1.text = getString(string.seleccion, trans)
     }
     companion object {
         /**

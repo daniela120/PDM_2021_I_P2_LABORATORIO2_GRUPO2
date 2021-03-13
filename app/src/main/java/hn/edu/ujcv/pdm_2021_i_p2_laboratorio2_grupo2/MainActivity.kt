@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity(),
     IngresarNotas.OnFragmentInteractionListener,
     EnviarMatricula.OnFragmentInteractionListener,
     EnviarNotas.OnFragmentInteractionListener{
+    var datos: HashMap<Int, String> = hashMapOf()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

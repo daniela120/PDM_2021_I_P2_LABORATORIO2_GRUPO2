@@ -29,9 +29,10 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class RegistrarAlumno : Fragment() {
-
     var datos: HashMap<Int, String> = hashMapOf()
     var num = 0
+
+
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -53,6 +54,7 @@ class RegistrarAlumno : Fragment() {
             dato.append(txt_NombreA.text.toString().trim()).append("|")
             dato.append(txt_CorreoA.text.toString().trim()).append("|")
             datos.put(num, dato.toString())
+            btn_registrar.isEnabled = true
 
              }
 

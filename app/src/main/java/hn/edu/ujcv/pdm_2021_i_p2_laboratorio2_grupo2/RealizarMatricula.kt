@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import hn.edu.ujcv.pdm_2021_i_p2_laboratorio2_grupo2.R.id.spinner
 import kotlinx.android.synthetic.main.fragment_realizar_matricula.*
 
 

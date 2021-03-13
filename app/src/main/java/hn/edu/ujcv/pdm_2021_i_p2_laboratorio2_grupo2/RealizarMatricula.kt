@@ -55,7 +55,7 @@ class RealizarMatricula : Fragment() {
         return inflater.inflate(layout.fragment_realizar_matricula, container, false)
 
 
-        val spinner = view.findViewById(R.id.spinner)
+        val spinner = view.findViewById()
         val lista = resources.getStringArray(array.asignatus)
 
 

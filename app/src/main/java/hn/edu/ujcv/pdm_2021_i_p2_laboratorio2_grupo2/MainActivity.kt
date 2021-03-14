@@ -10,6 +10,7 @@ import android.view.MenuItem
 import android.widget.Button
 import android.widget.Toast
 import com.google.android.material.tabs.TabLayout
+import hn.edu.ujcv.pdm_2021_i_p2_laboratorio2_grupo2.IU.nkFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_registrar_alumno.*
 import java.lang.StringBuilder
@@ -20,13 +21,16 @@ class MainActivity : AppCompatActivity(),
     RealizarMatricula.OnFragmentInteractionListener,
     IngresarNotas.OnFragmentInteractionListener,
     EnviarMatricula.OnFragmentInteractionListener,
-    EnviarNotas.OnFragmentInteractionListener{
+    EnviarNotas.OnFragmentInteractionListener,
+    nkFragment.OnFragmentInteractionListener {
     var datos: HashMap<Int, String> = hashMapOf()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
         setSupportActionBar(findViewById(R.id.toolbar))
         findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -46,6 +50,7 @@ class MainActivity : AppCompatActivity(),
         tab_layout.addTab(tab_layout.newTab().setIcon(android.R.drawable.ic_input_get))
         tab_layout.addTab(tab_layout.newTab().setIcon(android.R.drawable.ic_dialog_email))
         tab_layout.addTab(tab_layout.newTab().setIcon(android.R.drawable.ic_menu_send))
+        tab_layout.addTab(tab_layout.newTab().setIcon(android.R.drawable.ic_menu_always_landscape_portrait))
 
         val adapter = PagerAdapter(supportFragmentManager,tab_layout.tabCount)
         pager.adapter =adapter

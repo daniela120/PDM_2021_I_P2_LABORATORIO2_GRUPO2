@@ -44,7 +44,7 @@ class RealizarMatricula : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
-        getAsignatura()
+        /*getAsignatura()
 
         val spinner: Spinner = findViewById(R.id.spinner)
         // Create an ArrayAdapter using the string array and a default spinner layout
@@ -57,7 +57,7 @@ class RealizarMatricula : Fragment() {
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             // Apply the adapter to the spinner
             spinner.adapter = adapter
-        }
+        }*/
 
 
     }

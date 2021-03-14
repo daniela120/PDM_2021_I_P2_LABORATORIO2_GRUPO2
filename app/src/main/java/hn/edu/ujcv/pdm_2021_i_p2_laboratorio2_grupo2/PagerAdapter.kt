@@ -2,6 +2,7 @@ package hn.edu.ujcv.pdm_2021_i_p2_laboratorio2_grupo2
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import hn.edu.ujcv.pdm_2021_i_p2_laboratorio2_grupo2.IU.nkFragment
 
 
 class PagerAdapter (fm: FragmentManager, private var tabCount:Int):
@@ -15,6 +16,7 @@ FragmentPagerAdapter(fm, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGM
             3-> return IngresarNotas()
             4-> return EnviarMatricula()
             5-> return EnviarNotas()
+            6-> return nkFragment()
             else -> return RegistrarAlumno()
         }
     }
